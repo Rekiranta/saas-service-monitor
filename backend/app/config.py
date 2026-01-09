@@ -6,8 +6,8 @@ class Settings(BaseSettings):
     app_name: str = "SaaS Service Monitor"
     debug: bool = False
 
-    # Database
-    database_url: str = "postgresql+asyncpg://postgres:postgres@localhost:5432/service_monitor"
+    # Database (SQLite for local dev, PostgreSQL for production)
+    database_url: str = "sqlite+aiosqlite:///./service_monitor.db"
 
     # JWT
     secret_key: str = "your-secret-key-change-in-production"
